@@ -1,6 +1,6 @@
 /** @param {number} x */
 export function roundHalfUp(x) {
-  return Math.floor(x + 0.5);
+  return Math.max(0, Math.floor(x + 0.5));
 }
 
 /** @param {number} cents */
