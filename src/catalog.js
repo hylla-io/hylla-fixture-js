@@ -1,3 +1,4 @@
+import { applyDiscount } from "./discount.js";
 import { Priced } from "./pricing.js";
 import { applyTax } from "./tax.js";
 
@@ -22,6 +23,7 @@ export class Catalog {
 
   /** @param {number} ratePercent */
   total(ratePercent) {
-    return applyTax(this.subtotal(), ratePercent);
+    const bulk = this.count() >= 3 ? 10 : 0;
+    return applyTax(applyDiscount(this.subtotal(), bulk), ratePercent);
   }
 }

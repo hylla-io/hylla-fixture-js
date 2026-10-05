@@ -4,7 +4,7 @@ export function roundHalfUp(x) {
 }
 
 /** @param {number} cents */
-export function formatCents(cents) {
+export function formatMoney(cents) {
   const sign = cents < 0 ? "-" : "";
   const abs = Math.abs(cents);
   const whole = Math.trunc(abs / 100);
